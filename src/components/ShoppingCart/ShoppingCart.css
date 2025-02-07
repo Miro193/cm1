@@ -1,0 +1,102 @@
+.shopping-cart {
+  font-family: sans-serif; /* Use a clean font */
+  border: 1px solid #ccc; /* Add a border to the cart container */
+  padding: 20px;
+  border-radius: 5px; /* Slightly rounded corners */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: #f8f8f8; /* Light background color */
+}
+
+.shopping-cart h2,
+.shopping-cart h3 {
+  color: #333; /* Darker heading color */
+  margin-bottom: 10px;
+}
+
+.shopping-cart ul {
+  list-style: none; /* Remove bullet points */
+  padding: 0;
+}
+
+.shopping-cart li {
+  display: flex; /* Arrange items horizontally */
+  align-items: center; /* Vertically center items */
+  margin-bottom: 5px;
+  padding: 10px;
+  border-bottom: 1px solid #eee; /* Separator between items */
+}
+
+.shopping-cart li:last-child {
+  border-bottom: none; /* Remove bottom border on last item */
+}
+
+.shopping-cart button {
+  background-color: #4caf50; /* Green button */
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px; /* Space between text and button */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.shopping-cart button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.shopping-cart button:disabled {
+  background-color: #ccc; /* Grayed out when disabled */
+  cursor: default;
+}
+
+.shopping-cart input[type='text'],
+.shopping-cart input[type='number'] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+  margin-bottom: 10px; /* Space below input fields */
+}
+
+.shopping-cart p {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Optional: Style the "Add Product" section */
+.shopping-cart h3 {
+  margin-top: 20px; /* Add some space above "Add New Product" */
+}
+
+.shopping-cart input[type='text'],
+.shopping-cart input[type='number'] {
+  width: calc(50% - 10px); /* Adjust width as needed */
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+@media (max-width: 600px) {
+  /* Responsive adjustments for smaller screens */
+  .shopping-cart li {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align to the left */
+  }
+
+  .shopping-cart button {
+    margin-left: 0;
+    margin-top: 5px; /* Space above button on small screens */
+    width: 100%; /* Make button full width */
+  }
+
+  .shopping-cart input[type='text'],
+  .shopping-cart input[type='number'] {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .shopping-cart input[type='text'],
+  .shopping-cart input[type='number'],
+  .shopping-cart button {
+    margin-right: 0;
+  }
+}
