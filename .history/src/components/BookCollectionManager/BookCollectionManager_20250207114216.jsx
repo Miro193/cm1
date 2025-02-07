@@ -55,11 +55,7 @@ function BookCollectionManager() {
         />
         <br></br>
         <input 
-          type="text"
-          placeholder="Published in"
-          value={year}
-          onChange={handleYearChange}
-        />
+          type=""/>
         <br></br>
         <button onClick={addBook}>Add Book</button>
       </div>

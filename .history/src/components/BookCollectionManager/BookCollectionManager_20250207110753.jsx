@@ -23,7 +23,7 @@ function BookCollectionManager() {
   // Add a new book to the list
   function addBook() {
     if (title.trim() !== "" && author.trim() !== "" && year.trim() !== "") {
-      setBooks((b) => [...b, { title, author, year }]);
+      setBooks((b) => [...b, { title, author, yeatr }]);
       setTitle("");
       setAuthor("");
       setYear(""); // Clear the input fields
@@ -54,9 +54,9 @@ function BookCollectionManager() {
           onChange={handleAuthorChange}
         />
         <br></br>
-        <input 
+        <input
           type="text"
-          placeholder="Published in"
+          placeholder="Enter book year..."
           value={year}
           onChange={handleYearChange}
         />

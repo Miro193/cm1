@@ -7,6 +7,7 @@ function BookCollectionManager() {
   const [author, setAuthor] = useState("");
   const [ year, setYear] = useState("");
 
+  const years
   // Handle input change for title
   function handleTitleChange(event) {
     setTitle(event.target.value);
@@ -54,9 +55,9 @@ function BookCollectionManager() {
           onChange={handleAuthorChange}
         />
         <br></br>
-        <input 
+        <select name="year"
           type="text"
-          placeholder="Published in"
+          placeholder="Enter book year..."
           value={year}
           onChange={handleYearChange}
         />

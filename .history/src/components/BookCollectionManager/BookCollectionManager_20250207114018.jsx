@@ -7,6 +7,8 @@ function BookCollectionManager() {
   const [author, setAuthor] = useState("");
   const [ year, setYear] = useState("");
 
+  //this is for the year selector that I noticed just and just
+  const years = Array.from({ length: new Date().getFullYear() - 0 }, (_, i) => 1 + i);
   // Handle input change for title
   function handleTitleChange(event) {
     setTitle(event.target.value);
@@ -54,12 +56,14 @@ function BookCollectionManager() {
           onChange={handleAuthorChange}
         />
         <br></br>
-        <input 
-          type="text"
-          placeholder="Published in"
+        <select name="year" 
           value={year}
-          onChange={handleYearChange}
-        />
+          onChange={handleYearChange}>
+          <option value="">Published in</option>
+          {years.map((year) => (
+            <option key={year}
+          ))}
+        </select>
         <br></br>
         <button onClick={addBook}>Add Book</button>
       </div>

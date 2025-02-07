@@ -23,7 +23,7 @@ function BookCollectionManager() {
   // Add a new book to the list
   function addBook() {
     if (title.trim() !== "" && author.trim() !== "" && year.trim() !== "") {
-      setBooks((b) => [...b, { title, author, year }]);
+      setBooks((b) => [...b, { title, author }]);
       setTitle("");
       setAuthor("");
       setYear(""); // Clear the input fields
@@ -54,9 +54,9 @@ function BookCollectionManager() {
           onChange={handleAuthorChange}
         />
         <br></br>
-        <input 
+        <input
           type="text"
-          placeholder="Published in"
+          placeholder="Enter book year..."
           value={year}
           onChange={handleYearChange}
         />
@@ -66,7 +66,7 @@ function BookCollectionManager() {
       <ol>
         {books.map((book, index) => (
           <li key={index}>
-            <strong>{book.title}</strong> by <strong>{book.author}</strong> published in <strong>{book.year}</strong>
+            <strong>{book.title}</strong> by <strong>{book.author}</strong> published in {book.year}
             <button onClick={() => deleteBook(index)}>Delete</button>
           </li>
         ))}

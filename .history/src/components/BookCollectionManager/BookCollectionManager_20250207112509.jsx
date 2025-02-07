@@ -54,9 +54,9 @@ function BookCollectionManager() {
           onChange={handleAuthorChange}
         />
         <br></br>
-        <input 
-          type="text"
-          placeholder="Published in"
+        <select name="year"
+          <option value="Published in"></option>
+          placeholder="Enter book year..."
           value={year}
           onChange={handleYearChange}
         />
