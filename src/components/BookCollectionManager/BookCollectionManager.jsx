@@ -5,6 +5,7 @@ function BookCollectionManager() {
   const [books, setBooks] = useState([]);
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
+  const [ year, setYear] = useState("");
 
   // Handle input change for title
   function handleTitleChange(event) {
@@ -15,13 +16,17 @@ function BookCollectionManager() {
   function handleAuthorChange(event) {
     setAuthor(event.target.value);
   }
+  function handleYearChange(event) {
+    setYear(event.target.value);
+  }
 
   // Add a new book to the list
   function addBook() {
-    if (title.trim() !== "" && author.trim() !== "") {
-      setBooks((b) => [...b, { title, author }]);
+    if (title.trim() !== "" && author.trim() !== "" && year.trim() !== "") {
+      setBooks((b) => [...b, { title, author, year }]);
       setTitle("");
-      setAuthor(""); // Clear the input fields
+      setAuthor("");
+      setYear(""); // Clear the input fields
     }
   }
 
@@ -41,18 +46,27 @@ function BookCollectionManager() {
           value={title}
           onChange={handleTitleChange}
         />
+        <br></br>
         <input
           type="text"
           placeholder="Enter author name..."
           value={author}
           onChange={handleAuthorChange}
         />
+        <br></br>
+        <input 
+          type="text"
+          placeholder="Published in"
+          value={year}
+          onChange={handleYearChange}
+        />
+        <br></br>
         <button onClick={addBook}>Add Book</button>
       </div>
       <ol>
         {books.map((book, index) => (
           <li key={index}>
-            {book.title} by {book.author}
+            <strong>{book.title}</strong> by <strong>{book.author}</strong> published in <strong>{book.year}</strong>
             <button onClick={() => deleteBook(index)}>Delete</button>
           </li>
         ))}
