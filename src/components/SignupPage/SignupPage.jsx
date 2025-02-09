@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./SignupPage.css"; 
+import "./SignupPage.css";
 
 const SignupPage = () => {
   const [email, setEmail] = useState("");
@@ -35,7 +35,8 @@ const SignupPage = () => {
           onChange={(e) => setEmail(e.target.value)}
           className={isValidEmail ? "valid" : "invalid"}
         />
-
+        {isValidEmail && <p className="success-message">You typed a valid email</p>}
+        
         <label>Password:</label>
         <input
           type="password"
@@ -43,7 +44,8 @@ const SignupPage = () => {
           onChange={(e) => setPassword(e.target.value)}
           className={isStrongPassword ? "valid" : "invalid"}
         />
-
+        {!isStrongPassword && <p className="error-message">Your password is too weak</p>}
+        
         <label>Nationality:</label>
         <select value={nationality} onChange={(e) => setNationality(e.target.value)}>
           <option value="fi">Finnish</option>
@@ -51,10 +53,13 @@ const SignupPage = () => {
           <option value="de">German</option>
           <option value="fr">French</option>
         </select>
+        
+        <button type="submit" className="signup-button">Sign up</button>
       </form>
-
+      
       <p>{getGreeting(nationality)}</p>
       <p>Your email is {email || "john@doe.com"}</p>
+      {isValidEmail && <p>Your email address is correct</p>}
     </div>
   );
 };
